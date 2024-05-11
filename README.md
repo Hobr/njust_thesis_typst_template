@@ -1,9 +1,15 @@
 
-# 南京理工大学 Typst论文模板
+# 南京理工大学Typst论文模板
 
 Work in Progress....
 
 ## 使用
+
+### Nix OS
+
+```bash
+direnv allow
+```
 
 ## 计划
 
@@ -14,4 +20,4 @@ Work in Progress....
 ## 感谢
 
 - [jiec827/njustThesis](https://github.com/jiec827/njustThesis)
-- [Typix](https://github.com/loqusion/typix)
+- [nju-lug/modern-nju-thesis](https://github.com/nju-lug/modern-nju-thesis)

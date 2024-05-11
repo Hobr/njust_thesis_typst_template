@@ -1,0 +1,2 @@
+fmt:
+	typstfmt *.typ
