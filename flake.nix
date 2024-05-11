@@ -24,7 +24,6 @@
               typst
               typstfmt
               typst-lsp
-              typst-live
               typst-preview
             ];
           };
