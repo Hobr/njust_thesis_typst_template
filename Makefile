@@ -1,8 +1,8 @@
 build:
-	typst compile thesis.typ
+	typst compile --font-path ./font thesis.typ
 
 watch:
-	typst watch thesis.typ
+	typst watch --font-path ./font thesis.typ
 
 fmt:
 	typstfmt *.typ
