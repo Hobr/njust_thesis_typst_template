@@ -5,6 +5,12 @@ Work in Progress....
 
 ## 使用
 
+### 推荐安装
+
+- [Typst](https://github.com/typst/typst)
+- LSP: [Tinymist](https://github.com/Myriad-Dreamin/tinymist)
+- 格式: [Typstyle](https://github.com/Enter-tainer/typstyle)
+
 ## 计划
 
 - [ ] 谢国森老师公选论文课程
