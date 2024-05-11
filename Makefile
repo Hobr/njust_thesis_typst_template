@@ -5,4 +5,4 @@ watch:
 	typst watch --font-path ./font thesis.typ
 
 fmt:
-	typstfmt *.typ
+	typstyle -i *.typ

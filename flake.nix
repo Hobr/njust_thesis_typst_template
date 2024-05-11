@@ -22,7 +22,7 @@
           mkShell {
             packages = with pkgs; [
               typst
-              typstfmt
+              typstyle
               typst-lsp
               typst-preview
             ];
