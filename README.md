@@ -5,12 +5,6 @@ Work in Progress....
 
 ## 使用
 
-### Nix OS
-
-```bash
-direnv allow
-```
-
 ## 计划
 
 - [ ] 谢国森老师公选论文课程

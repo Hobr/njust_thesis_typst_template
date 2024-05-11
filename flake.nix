@@ -21,6 +21,7 @@
           with pkgs;
           mkShell {
             packages = with pkgs; [
+              typst
               typstfmt
               typst-lsp
               typst-live
