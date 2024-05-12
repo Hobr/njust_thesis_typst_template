@@ -23,8 +23,7 @@
             packages = with pkgs; [
               typst
               typstyle
-              typst-lsp
-              typst-preview
+              tinymist
             ];
           };
       }
