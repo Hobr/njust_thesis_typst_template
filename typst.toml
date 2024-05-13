@@ -1,0 +1,16 @@
+[package]
+name = "njust_thesis_typst_template"
+version = "0.1.0"
+entrypoint = "lib.typ"
+authors = ["Hobr"]
+license = "MIT"
+description = "南京理工大学Typst论文模板"
+repository = "https://github.com/Hobr/njust_thesis_typst_template/"
+keywords = ["Nanjing University of Science and Technology", "thesis"]
+categories = ["thesis"]
+exclude = [".vscode"]
+
+[template]
+path = "template"
+entrypoint = "thesis.typ"
+thumbnail = "thumbnail.png"
