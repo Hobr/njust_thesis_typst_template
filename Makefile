@@ -1,8 +1,8 @@
 build:
-	typst compile --font-path ./font thesis.typ
+	typst compile --root ./ --font-path ./font template/thesis.typ
 
 watch:
-	typst watch --font-path ./font thesis.typ
+	typst watch --root ./ --font-path ./font template/thesis.typ
 
 fmt:
 	typstyle -i *.typ
