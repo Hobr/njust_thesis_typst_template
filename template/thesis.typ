@@ -54,7 +54,7 @@
   font: (),
 
   // 参考文献
-  reference: bibliography("ref.bib"),
+  reference: bibliography("ref.bib",full: true),
 )
 
 // 封面

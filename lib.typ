@@ -41,18 +41,15 @@
   // 文档
   set document(
     title: info.title,
-    author: author.map(author => author.name)
+    author: author.map(author => author.name),
   )
 
   // 页面
   set page(
     paper: "a4",
     margin: auto,
-    header: align(
-      right + horizon,
-      info.titleEn
-    ),
-    footer: none
+    header: none,
+    footer: none,
   )
 
   // 文字
@@ -64,17 +61,15 @@
   )
 
   // Heading
-  set heading(numbering: "1.1 ")
+  set heading(numbering: "一.一.一.一. ")
 
-  show heading.where(level:1):it => box(width: 100%)[
-    #set heading(numbering: "I.")
+  show heading.where(level: 1): it => box(width: 100%)[
     #set align(left)
     #v(8pt)
     #it
   ]
 
-  show heading.where(level:2):it => box(width: 100%)[
-    #set heading(numbering: "1.")
+  show heading.where(level: 2): it => box(width: 100%)[
     #set align(left)
     #v(4pt)
     #it
@@ -86,7 +81,7 @@
   // 标题
   align(
     center,
-    text(28pt, info.title)
+    text(28pt, info.title),
   )
   v(8mm, weak: true)
 
@@ -96,10 +91,13 @@
   grid(
     columns: (1fr,) * ncols,
     row-gutter: 16pt,
-    ..author.map(author => align(center, [
-      #author.name (#author.studentid) \
-      #author.department#author.major
-    ])),
+    ..author.map(author => align(
+      center,
+      [
+        #author.name (#author.studentid) \
+        #author.department#author.major
+      ],
+    )),
   )
   v(8mm, weak: true)
 
@@ -107,16 +105,19 @@
   align(center, [*摘要*])
   align(left, [#info.abs])
   // 关键词
-  align(left,[
-    *关键词:* #info.keywords
-  ])
+  align(
+    left,
+    [
+      *关键词:* #info.keywords
+    ],
+  )
   v(8mm, weak: true)
 
   // --- 英文
   // 标题
   align(
     center,
-    text(28pt, info.titleEn)
+    text(28pt, info.titleEn),
   )
   v(8mm, weak: true)
 
@@ -124,15 +125,15 @@
   align(center, [*Abstract*])
   align(left, [#info.absEn])
   // 关键词
-  align(left,[
-    *Keywords:* #info.keywordsEn
-  ])
+  align(
+    left,
+    [
+      *Keywords:* #info.keywordsEn
+    ],
+  )
   v(8mm, weak: true)
 
   // ----- 正文
   set align(left)
-  columns(2,body)
-
-  // 参考文献
-  reference
+  columns(2, body + reference)
 }
