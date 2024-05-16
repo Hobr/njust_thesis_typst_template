@@ -11,29 +11,33 @@
     title: [题目],
     titleEn: [Title],
     // 摘要
-    abs: [
-      Abstract abstract abstract abstract abstract abstract abstract abstract abstract, abstract abstract abstract abstract.
-    ],
+    abs: [摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要],
+    absEn: lorem(80),
+    // 关键词
+    keywords: [一 二 三],
+    keywordsEn: [A B C],
     // 日期
     date: datetime.today(),
+    // 语言
+    lang: "zh"
   ),
 
   // 作者
   author: (
     (
       // 姓名
-      name: "张三",
-      nameEn: "Zhang San",
+      name: "拓欣",
+      nameEn: "Tuo Xin",
       // 学生证号
-      studentid: "922114514101",
+      studentid: "922114740127",
       // 班级号
-      classid: "9221145141",
+      classid: "9231147401",
       // 学院
-      department: [学院],
-      departmentEn: [Department],
+      department: [外国语学院],
+      departmentEn: [School of Foreign Studies],
       // 专业
-      major: [XX专业],
-      majorEn: [XX],
+      major: [日语专业],
+      majorEn: [Japanese Major],
     ),
   ),
 
@@ -50,10 +54,9 @@
   font: (),
 
   // 参考文献
-  reference: bibliography.with("ref.bib"),
+  reference: bibliography("ref.bib"),
 )
 
-// ---------- 模板生成
 // 封面
 // #cover()
 // 声明
@@ -65,11 +68,10 @@
 
 // ---------- 正文
 // 引言
-#include "chapter/intro.typ"
+#include "chapter/1.typ"
 // 第二章
-#include "chapter/chap2.typ"
+#include "chapter/2.typ"
 
-// ---------- 模板生成
 // 致谢
 // #ack()
 // 参考文献
