@@ -17,7 +17,7 @@
     keywords: none,
     keywordsEn: none,
     // 日期
-    date: datetime.today(),
+    date: none,
     // 语言
     lang: "zh"
   ),
@@ -76,6 +76,13 @@
   ]
 
   // ---------- 内容
+  // ----- 封面
+  text([《ChatGPT时代的科技论文检索与写作》课程报告])
+
+  text([南京理工大学])
+  text([#info.date])
+  pagebreak(weak: true)
+
   // ----- 抬头
   // --- 中文
   // 标题

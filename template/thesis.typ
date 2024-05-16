@@ -17,7 +17,7 @@
     keywords: [一 二 三],
     keywordsEn: [A B C],
     // 日期
-    date: datetime.today(),
+    date: [2024年5月18日],
     // 语言
     lang: "zh"
   ),
