@@ -8,7 +8,6 @@
     stroke: none,
     text(
       size: fontSize.小三,
-      spacing: 1200%,
       overhang: false,
       key,
     ),
@@ -31,33 +30,45 @@
 
 // 封面
 #let showCover(info, author) = {
-  v(40pt)
   align(
     center,
-    text(size: fontSize.小一, [《ChatGPT时代的科技论文检索与写作》课程报告]),
+    [
+
+      #table(
+        columns: (auto),
+        rows: (auto, auto, auto),
+        stroke: none,
+        gutter: 9pt,
+        text(
+          size: fontSize.小一,
+          [《ChatGPT时代的科技论文检索与写作》课程报告],
+        ),
+        text(size: fontSize.二号, [#info.title]),
+      )
+      #v(20pt)
+
+      #grid(
+        columns: (100pt, 40%),
+        rows: (35pt, 35pt),
+        coverKey("班级(班号)"),
+        coverValue(author.at(0).studentid),
+        coverKey("姓　　名"),
+        coverValue(author.at(0).name),
+        coverKey("学　　号"),
+        coverValue(author.at(0).studentid),
+        coverKey("学　　院"),
+        coverValue(author.at(0).department),
+      )
+      #v(10pt)
+
+      #table(
+        columns: (auto),
+        rows: (auto, auto, auto),
+        stroke: none,
+        gutter: 9pt,
+        text(size: fontSize.四号, [南京理工大学]),
+        text(size: fontSize.四号, [#info.date]),
+      )
+    ],
   )
-  v(20pt)
-
-  align(center, text(size: fontSize.二号, [#info.title]))
-  v(20pt)
-
-  align(
-    center,
-    grid(
-      columns: (100pt, 200pt),
-      rows: (35pt, 35pt),
-      coverKey("班级(班号)"),
-      coverValue(author.at(0).studentid),
-      coverKey("姓 名"),
-      coverValue(author.at(0).name),
-      coverKey("学 号"),
-      coverValue(author.at(0).studentid),
-      coverKey("学 院"),
-      coverValue(author.at(0).department),
-    ),
-  )
-  v(20pt)
-
-  align(center, text(size: fontSize.四号, [南京理工大学]))
-  align(center, text(size: fontSize.四号, [#info.date]))
 }

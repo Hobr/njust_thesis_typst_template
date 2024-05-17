@@ -50,9 +50,6 @@
     ),
   ),
 
-  // 字体
-  font: (),
-
   // 参考文献
   reference: bibliography("ref.bib",full: true),
 )

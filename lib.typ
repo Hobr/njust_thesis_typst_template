@@ -35,9 +35,6 @@
   // 指导老师
   supervisor: (),
 
-  // 字体
-  font: (),
-
   // 参考文献
   reference: none,
 
