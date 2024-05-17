@@ -75,7 +75,7 @@
     // 字号
     size: 12pt,
     // 字体
-    // font: ,
+    font: (fonts.math,fonts.en,fonts.zh_宋体),
   )
   doc
 }
