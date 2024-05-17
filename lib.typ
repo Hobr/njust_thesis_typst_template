@@ -53,7 +53,7 @@
   // 声明
   // showDeclare()
 
-  // ----- 头部中文
+  // 中文
   // 标题
   showTitle(info.title)
   v(8mm, weak: true)
@@ -64,7 +64,7 @@
   showAbstract(info.abstract, keywords: info.keywords, lang: "zh")
   v(8mm, weak: true)
 
-  // ----- 头部英文
+  // 英文
   // 标题
   showTitle(info.titleEn)
   v(8mm, weak: true)

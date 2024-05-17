@@ -59,6 +59,8 @@
     justify: true,
     // 行间距
     leading: 0.75em,
+    // 行首缩进
+    first-line-indent:2em
   )
   doc
 }
