@@ -1,48 +1,63 @@
 #import "../util/font.typ": fonts, fontSize
 
 // 信息栏
-#let infoKey(key) = {
+#let coverKey(key) = {
   rect(
     width: 100%,
-    inset: 1pt,
+    inset: 4pt,
     stroke: none,
-    key,
+    text(
+      size: fontSize.小三,
+      spacing: 1200%,
+      overhang: false,
+      key,
+    ),
   )
 }
 
-#let infoValue(value) = {
+#let coverValue(value) = {
   rect(
     width: 100%,
-    inset: 1pt,
+    inset: 4pt,
     stroke: (
       bottom: 0.5pt + black,
     ),
-    value,
+    text(
+      size: fontSize.小三,
+      value,
+    ),
   )
 }
 
 // 封面
 #let showCover(info, author) = {
-  align(center, text([《ChatGPT时代的科技论文检索与写作》课程报告]))
-  align(center, text([#info.title]))
+  v(40pt)
+  align(
+    center,
+    text(size: fontSize.小一, [《ChatGPT时代的科技论文检索与写作》课程报告]),
+  )
+  v(20pt)
+
+  align(center, text(size: fontSize.二号, [#info.title]))
+  v(20pt)
 
   align(
     center,
     grid(
-      align: center,
       columns: (100pt, 200pt),
       rows: (35pt, 35pt),
-      infoKey("班级(班号)"),
-      infoValue(author.at(0).studentid),
-      infoKey("姓名"),
-      infoValue(author.at(0).name),
-      infoKey("学号"),
-      infoValue(author.at(0).studentid),
-      infoKey("学院"),
-      infoValue(author.at(0).department),
+      coverKey("班级(班号)"),
+      coverValue(author.at(0).studentid),
+      coverKey("姓 名"),
+      coverValue(author.at(0).name),
+      coverKey("学 号"),
+      coverValue(author.at(0).studentid),
+      coverKey("学 院"),
+      coverValue(author.at(0).department),
     ),
   )
+  v(20pt)
 
-  align(center, text([南京理工大学]))
-  align(center, text([#info.date]))
+  align(center, text(size: fontSize.四号, [南京理工大学]))
+  align(center, text(size: fontSize.四号, [#info.date]))
 }
