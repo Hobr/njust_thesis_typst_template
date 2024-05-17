@@ -47,9 +47,9 @@
 ) = {
   // ----- 预设
   show: xgsLesson.with(info, author)
-
   // ----- 封面
   // 封面
+  counter(page).update(0)
   showCover(info, author)
   pagebreak(weak: true)
 

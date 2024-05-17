@@ -15,7 +15,7 @@
 // 页眉
 #let pageHeader(title) = {
   locate(loc => {
-    if counter(page).at(loc).first() > 1 [
+    if loc.page() > 1 [
       #align(
         center,
         text(
@@ -33,13 +33,13 @@
 // 页脚
 #let pageFooter() = {
   locate(loc => {
-    if counter(page).at(loc).first() > 1 [
+    if loc.page() > 1 [
       #align(
         center,
         text(
-          size: 10pt,
-          baseline: -3pt,
-        )[#counter(page).display("1")],
+          size: 12pt,
+          baseline: 16pt,
+        )[#counter(page).display("- 1 / 1 -", both: true)],
       )
     ]
   })
