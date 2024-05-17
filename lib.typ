@@ -2,6 +2,8 @@
 #import "util/package.typ": *
 // 字体
 #import "util/font.typ": fonts, fontSize
+// 样式
+#import "layout/xgsLesson.typ": xgsLesson
 
 #let njustThesis(
   // 类型
@@ -37,85 +39,10 @@
   body,
 ) = {
   // ----- 预设
-  // 文档
-  set document(
-    // 标题
-    title: info.title,
-    // 作者
-    author: author.map(author => author.name),
-  )
-
-  // 页面
-  set page(
-    // 纸张大小
-    paper: "a4",
-    // 边距
-    margin: auto,
-    // 页眉
-    header: {
-      align(
-        center,
-        text(
-          font: fonts.zh_宋体,
-          size: 10pt,
-          baseline: 8pt,
-          spacing: 3pt,
-          info.title
-        )
-      )
-      line(length: 100%, stroke: 0.1pt)
-    },
-    // 页脚
-    footer: {
-      align(
-        center,
-        text(
-          size: 10pt,
-          baseline: -3pt,
-          counter(page).display("1")
-        )
-      )
-    },
-  )
-
-  // 段落
-  set par(
-    // 左右对齐
-    justify: true,
-    // 行间距
-    leading: 0.75em,
-  )
-
-  // 文字
-  set text(
-    // 语言
-    lang: info.lang,
-    // 地区
-    region: info.lang,
-    // 字号
-    size: 12pt,
-    // 字体
-    // font: ,
-  )
-
-  // 章节标题
-  set heading(numbering: "一.")
-
-  show heading.where(level: 1): it => box(width: 100%)[
-    #v(12pt)
-    #align(left)[#it]
-    #v(2pt)
-  ]
-
-  show heading.where(level: 2): it => box(width: 100%)[
-    #v(6pt)
-    #align(left)[#it]
-    #v(2pt)
-  ]
+  show: xgsLesson.with(info, author)
 
   // ----- 封面
   // 封面
-
   // 信息栏
   let coverKey(key) = {
     rect(
