@@ -70,3 +70,15 @@ I have #five fingers.
 
 If I had one more, I'd have
 #inc(five) fingers. Whoa!
+
+== 表格
+
+#table(
+  columns: 5 * (1fr,),
+  ..for x in range(1, 10) {
+    for y in range(1, 6) {
+      (str(x * y),)
+    }
+  },
+)
+
