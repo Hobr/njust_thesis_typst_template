@@ -124,9 +124,9 @@
       stroke: none,
       text(
         size: fontSize.小三,
-        overhang: false,
-        key,
-      ),
+        overhang: true,
+        spacing: 1000%,
+      )[#key],
     )
   }
 
@@ -137,10 +137,7 @@
       stroke: (
         bottom: 0.5pt + black,
       ),
-      text(
-        size: fontSize.小三,
-        value,
-      ),
+      text(size: fontSize.小三)[#value],
     )
   }
 
@@ -160,11 +157,11 @@
       rows: (35pt, 35pt),
       coverKey("班级(班号)"),
       coverValue(author.at(0).studentid),
-      coverKey("姓　　名"),
+      coverKey("姓 名"),
       coverValue(author.at(0).name),
-      coverKey("学　　号"),
+      coverKey("学 号"),
       coverValue(author.at(0).studentid),
-      coverKey("学　　院"),
+      coverKey("学 院"),
       coverValue(author.at(0).department),
     )
     #v(10pt)
