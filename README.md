@@ -19,5 +19,6 @@ Work in Progress....
 ## 感谢
 
 - [jiec827/njustThesis](https://github.com/jiec827/njustThesis)
-- [nju-lug/modern-nju-thesis](https://github.com/nju-lug/modern-nju-thesis)
+- [modern-nju-thesis](https://github.com/nju-lug/modern-nju-thesis)
+- [SHU-Bachelor-Thesis-Typst](https://github.com/shuosc/SHU-Bachelor-Thesis-Typst)
 - [typst-doc-cn](https://typst-doc-cn.github.io/)

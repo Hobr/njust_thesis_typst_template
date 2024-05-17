@@ -1,5 +1,12 @@
 // 包
 #import "util/package.typ": *
+// 字体
+#import "util/font.typ": fonts, fontSize
+// 页面
+#import "page/cover.typ": showCover
+#import "page/header.typ": showTitle,showAuthor
+#import "page/abstract.typ": showAbstract, showKeywords
+#import "page/content.typ": showContent
 
 #let njustThesis(
   // 类型
@@ -11,8 +18,8 @@
     title: [题目],
     titleEn: none,
     // 摘要
-    abs: none,
-    absEn: none,
+    abstract: none,
+    abstractEn: none,
     // 关键词
     keywords: none,
     keywordsEn: none,
@@ -37,7 +44,7 @@
   // 正文
   body,
 ) = {
-  // -------------- 文档
+  // ---------- 文档
   // 文档
   set document(
     title: info.title,
@@ -48,8 +55,19 @@
   set page(
     paper: "a4",
     margin: auto,
-    header: none,
-    footer: none,
+    // 页眉
+    header: {
+      set align(center)
+      set text(font: fonts.zh_宋体, 10pt, baseline: 8pt, spacing: 3pt)
+      [#info.title]
+      line(length: 100%, stroke: 0.1pt)
+    },
+    // 页脚
+    footer: [
+      #set align(center)
+      #set text(size: 10pt, baseline: -3pt)
+      #counter(page).display("1")
+    ],
   )
 
   // 文字
@@ -77,70 +95,52 @@
 
   // ---------- 内容
   // ----- 封面
-  text([《ChatGPT时代的科技论文检索与写作》课程报告])
-
-  text([南京理工大学])
-  text([#info.date])
+  showCover(info,author)
   pagebreak(weak: true)
 
-  // ----- 抬头
-  // --- 中文
-  // 标题
-  align(
-    center,
-    text(28pt, info.title),
-  )
+  // ----- 头部中文
+  showTitle(info.title)
   v(8mm, weak: true)
 
-  // 作者, 超过三个作者创建下一行
-  let count = author.len()
-  let ncols = calc.min(count, 3)
-  grid(
-    columns: (1fr,) * ncols,
-    row-gutter: 16pt,
-    ..author.map(author => align(
-      center,
-      [
-        #author.name (#author.studentid) \
-        #author.department#author.major
-      ],
-    )),
-  )
+  showAuthor(author)
   v(8mm, weak: true)
 
-  // 摘要
-  align(center, [*摘要*])
-  align(left, [#info.abs])
-  // 关键词
-  align(
-    left,
-    [
-      *关键词:* #info.keywords
-    ],
-  )
+  showAbstract(info.abstract)
+  showKeywords(info.keywords)
   v(8mm, weak: true)
 
-  // --- 英文
-  // 标题
-  align(
-    center,
-    text(28pt, info.titleEn),
-  )
+  // ----- 头部英文
+  showTitle(info.titleEn)
   v(8mm, weak: true)
 
-  // 摘要
-  align(center, [*Abstract*])
-  align(left, [#info.absEn])
-  // 关键词
-  align(
-    left,
-    [
-      *Keywords:* #info.keywordsEn
-    ],
-  )
+  showAbstract(info.abstractEn)
+  showKeywords(info.keywordsEn)
   v(8mm, weak: true)
 
   // ----- 正文
-  set align(left)
-  columns(2, body + reference)
+  showContent(body + reference)
+
+  // 封面
+  // showCover()
+
+  // 声明
+  // showDeclare()
+
+  // 摘要
+  // showAbstract()
+
+  // 目录
+  // showToc()
+
+  // 正文
+  // showContent()
+
+  // 致谢
+  // showAck()
+
+  // 参考文献
+  // showReference()
+
+  // 附录
+  // showAppendix()
 }
