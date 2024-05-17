@@ -223,11 +223,12 @@
 
   // ----- 正文
   // 分栏
-  show: main => columns(2, main)
-
-  align(
-    left,
-    align(left, body + reference),
+  columns(
+    2,
+    align(
+      left,
+      align(left, body + reference),
+    ),
   )
   // 封面
   // showCover()
