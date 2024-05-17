@@ -1,9 +1,13 @@
 // 包
 #import "util/package.typ": *
-// 字体
-#import "util/font.typ": fonts, fontSize
 // 样式
 #import "layout/xgsLesson.typ": xgsLesson
+// 页面
+#import "page/cover.typ": showCover
+#import "page/header.typ": showTitle, showAuthor
+#import "page/abstract.typ": showAbstract
+#import "page/content.typ": showContent
+#import "page/reference.typ": showReference
 
 #let njustThesis(
   // 类型
@@ -43,130 +47,36 @@
 
   // ----- 封面
   // 封面
-  // 信息栏
-  let coverKey(key) = {
-    rect(
-      width: 100%,
-      inset: 5pt,
-      stroke: none,
-      text(
-        size: fontSize.小三,
-        overhang: true,
-        spacing: 1000%,
-      )[#key],
-    )
-  }
-
-  let coverValue(value) = {
-    rect(
-      width: 100%,
-      inset: 5pt,
-      stroke: (
-        bottom: 0.5pt + black,
-      ),
-      text(size: fontSize.小三)[#value],
-    )
-  }
-
-  align(center)[
-    #table(
-      columns: (auto),
-      rows: (auto, auto, auto),
-      stroke: none,
-      gutter: 32pt,
-      text(size: fontSize.小一)[《ChatGPT时代的科技论文检索与写作》课程报告],
-      text(size: fontSize.二号)[#info.title],
-    )
-    #v(20pt)
-
-    #grid(
-      columns: (100pt, 40%),
-      rows: (35pt, 35pt),
-      coverKey("班级(班号)"),
-      coverValue(author.at(0).studentid),
-      coverKey("姓 名"),
-      coverValue(author.at(0).name),
-      coverKey("学 号"),
-      coverValue(author.at(0).studentid),
-      coverKey("学 院"),
-      coverValue(author.at(0).department),
-    )
-    #v(10pt)
-
-    #table(
-      columns: (auto),
-      rows: (auto, auto, auto),
-      stroke: none,
-      gutter: 12pt,
-      text(size: fontSize.四号)[南京理工大学],
-      text(size: fontSize.四号)[#info.date],
-    )
-  ]
-
+  showCover(info, author)
   pagebreak(weak: true)
+
+  // 声明
+  // showDeclare()
 
   // ----- 头部中文
   // 标题
-  align(
-    center,
-    text(28pt, info.title),
-  )
+  showTitle(info.title)
   v(8mm, weak: true)
-
   // 作者
-  let count = author.len()
-  let ncols = calc.min(count, 3)
-  grid(
-    columns: (1fr,) * ncols,
-    row-gutter: 16pt,
-    ..author.map(author => align(center)[
-      #author.name (#author.studentid)\
-      #author.department#author.major
-    ]),
-  )
+  showAuthor(author)
   v(8mm, weak: true)
-
   // 摘要
-  align(center)[*摘要*]
-  align(left)[#info.abstract]
-  // 关键词
-  align(left)[*关键词:* #info.keywords]
+  showAbstract(info.abstract, keywords: info.keywords, lang: "zh")
   v(8mm, weak: true)
 
   // ----- 头部英文
   // 标题
-  align(
-    center,
-    text(28pt, info.titleEn),
-  )
+  showTitle(info.titleEn)
+  v(8mm, weak: true)
+  // 摘要
+  showAbstract(info.abstractEn, keywords: info.keywordsEn, lang: "en")
   v(8mm, weak: true)
 
-  // 摘要
-  align(center)[*Abstract*]
-  align(left)[#info.abstractEn]
-  // 关键词
-  align(left)[*Keywords:* #info.keywordsEn]
-  v(8mm, weak: true)
-
-  // ----- 正文
-  // 分栏
-  columns(
-    2,
-    align(
-      left,
-      align(left, body + reference),
-    ),
-  )
-  // 封面
-  // showCover()
-  // 声明
-  // showDeclare()
-  // 摘要
-  // showAbstract()
   // 目录
   // showToc()
-  // 正文
-  // showContent()
+
+  // ----- 正文
+  showContent(body + showReference(reference))
   // 致谢
   // showAck()
   // 参考文献
