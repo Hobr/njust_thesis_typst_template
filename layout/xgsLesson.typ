@@ -9,8 +9,32 @@
     // 作者
     author: author.map(author => author.name),
   )
-
   doc
+}
+
+// 页眉
+#let pageHeader(title) = {
+  align(
+    center,
+    text(
+      font: fonts.zh_宋体,
+      size: 10pt,
+      baseline: 8pt,
+      spacing: 3pt,
+    )[#title],
+  )
+  line(length: 100%, stroke: 0.1pt)
+}
+
+// 页脚
+#let pageFooter() = {
+  align(
+    center,
+    text(
+      size: 10pt,
+      baseline: -3pt,
+    )[#counter(page).display("1")],
+  )
 }
 
 // 页面
@@ -21,30 +45,10 @@
     // 边距
     margin: auto,
     // 页眉
-    header: {
-      align(
-        center,
-        text(
-          font: fonts.zh_宋体,
-          size: 10pt,
-          baseline: 8pt,
-          spacing: 3pt,
-        )[#title]
-      )
-      line(length: 100%, stroke: 0.1pt)
-    },
+    header: pageHeader(title),
     // 页脚
-    footer: {
-      align(
-        center,
-        text(
-          size: 10pt,
-          baseline: -3pt,
-        )[#counter(page).display("1")]
-      )
-    },
+    footer: pageFooter(),
   )
-
   doc
 }
 
@@ -56,7 +60,6 @@
     // 行间距
     leading: 0.75em,
   )
-
   doc
 }
 
@@ -72,7 +75,6 @@
     // 字体
     // font: ,
   )
-
   doc
 }
 
@@ -91,7 +93,6 @@
     #align(left)[#it]
     #v(2pt)
   ]
-
   doc
 }
 
@@ -102,6 +103,5 @@
   show: setPar.with()
   show: setText.with(info.lang)
   show: setHeading.with()
-
   doc
 }
