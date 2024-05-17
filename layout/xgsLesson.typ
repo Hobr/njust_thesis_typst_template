@@ -14,27 +14,35 @@
 
 // 页眉
 #let pageHeader(title) = {
-  align(
-    center,
-    text(
-      font: fonts.zh_宋体,
-      size: 10pt,
-      baseline: 8pt,
-      spacing: 3pt,
-    )[#title],
-  )
-  line(length: 100%, stroke: 0.1pt)
+  locate(loc => {
+    if counter(page).at(loc).first() > 1 [
+      #align(
+        center,
+        text(
+          font: fonts.zh_宋体,
+          size: 10pt,
+          baseline: 8pt,
+          spacing: 3pt,
+        )[#title],
+      )
+      #line(length: 100%, stroke: 0.1pt)
+    ]
+  })
 }
 
 // 页脚
 #let pageFooter() = {
-  align(
-    center,
-    text(
-      size: 10pt,
-      baseline: -3pt,
-    )[#counter(page).display("1")],
-  )
+  locate(loc => {
+    if counter(page).at(loc).first() > 1 [
+      #align(
+        center,
+        text(
+          size: 10pt,
+          baseline: -3pt,
+        )[#counter(page).display("1")],
+      )
+    ]
+  })
 }
 
 // 页面
@@ -56,7 +64,7 @@
 #let setPar(doc) = {
   set par(
     // 左右对齐
-    justify: true,
+    // justify: true,
     // 行间距
     leading: 0.75em,
     // 行首缩进

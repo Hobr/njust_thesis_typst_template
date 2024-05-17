@@ -2,10 +2,7 @@
 #let showTitle(title) = {
   align(
     center,
-    par(
-      justify: false,
-      text(24pt, title),
-    ),
+    text(24pt, title),
   )
 }
 

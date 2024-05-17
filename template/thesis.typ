@@ -52,6 +52,9 @@
 
   // 参考文献
   reference: bibliography("ref.bib",title:"参考文献",full: true),
+
+  // 双面打印
+  twoside: false,
 )
 
 // ---------- 正文

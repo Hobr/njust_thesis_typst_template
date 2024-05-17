@@ -39,6 +39,9 @@
   // 参考文献
   reference: none,
 
+  // 双面打印
+  twoside: false,
+
   // 正文
   body,
 ) = {
