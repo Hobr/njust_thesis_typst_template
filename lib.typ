@@ -2,11 +2,6 @@
 #import "util/package.typ": *
 // 字体
 #import "util/font.typ": fonts, fontSize
-// 页面
-#import "page/cover.typ": showCover
-#import "page/header.typ": showTitle,showAuthor
-#import "page/abstract.typ": showAbstract, showKeywords
-#import "page/content.typ": showContent
 
 #let njustThesis(
   // 类型
@@ -41,103 +36,225 @@
   // 正文
   body,
 ) = {
-  // ---------- 文档
+  // ----- 预设
   // 文档
   set document(
+    // 标题
     title: info.title,
+    // 作者
     author: author.map(author => author.name),
   )
 
   // 页面
   set page(
+    // 纸张大小
     paper: "a4",
+    // 边距
     margin: auto,
     // 页眉
     header: {
-      set align(center)
-      set text(font: fonts.zh_宋体, 10pt, baseline: 8pt, spacing: 3pt)
-      [#info.title]
+      align(
+        center,
+        text(
+          font: fonts.zh_宋体,
+          size: 10pt,
+          baseline: 8pt,
+          spacing: 3pt,
+          info.title
+        )
+      )
       line(length: 100%, stroke: 0.1pt)
     },
     // 页脚
-    footer: [
-      #set align(center)
-      #set text(size: 10pt, baseline: -3pt)
-      #counter(page).display("1")
-    ],
+    footer: {
+      align(
+        center,
+        text(
+          size: 10pt,
+          baseline: -3pt,
+          counter(page).display("1")
+        )
+      )
+    },
+  )
+
+  // 段落
+  set par(
+    // 左右对齐
+    justify: true,
+    // 行间距
+    leading: 0.75em,
   )
 
   // 文字
   set text(
+    // 语言
     lang: info.lang,
-    region: "cn",
-    // font: ,
+    // 地区
+    region: info.lang,
+    // 字号
     size: 12pt,
+    // 字体
+    // font: ,
   )
 
-  // Heading
-  set heading(numbering: "一.一.一.一. ")
+  // 章节标题
+  set heading(numbering: "一.一.一. ")
 
   show heading.where(level: 1): it => box(width: 100%)[
-    #set align(left)
-    #v(8pt)
-    #it
+    #v(12pt)
+    #align(left, [#it])
+    #v(2pt)
   ]
 
   show heading.where(level: 2): it => box(width: 100%)[
-    #set align(left)
-    #v(4pt)
-    #it
+    #v(6pt)
+    #align(left, [#it])
+    #v(2pt)
   ]
 
-  // ---------- 内容
   // ----- 封面
-  showCover(info,author)
+  // 封面
+
+  // 信息栏
+  let coverKey(key) = {
+    rect(
+      width: 100%,
+      inset: 4pt,
+      stroke: none,
+      text(
+        size: fontSize.小三,
+        overhang: false,
+        key,
+      ),
+    )
+  }
+
+  let coverValue(value) = {
+    rect(
+      width: 100%,
+      inset: 5pt,
+      stroke: (
+        bottom: 0.5pt + black,
+      ),
+      text(
+        size: fontSize.小三,
+        value,
+      ),
+    )
+  }
+
+  align(
+    center,
+    [
+
+      #table(
+        columns: (auto),
+        rows: (auto, auto, auto),
+        stroke: none,
+        gutter: 9pt,
+        text(
+          size: fontSize.小一,
+          [《ChatGPT时代的科技论文检索与写作》课程报告],
+        ),
+        text(size: fontSize.二号, [#info.title]),
+      )
+      #v(20pt)
+
+      #grid(
+        columns: (100pt, 40%),
+        rows: (35pt, 35pt),
+        coverKey("班级(班号)"),
+        coverValue(author.at(0).studentid),
+        coverKey("姓　　名"),
+        coverValue(author.at(0).name),
+        coverKey("学　　号"),
+        coverValue(author.at(0).studentid),
+        coverKey("学　　院"),
+        coverValue(author.at(0).department),
+      )
+      #v(10pt)
+
+      #table(
+        columns: (auto),
+        rows: (auto, auto, auto),
+        stroke: none,
+        gutter: 12pt,
+        text(size: fontSize.四号, [南京理工大学]),
+        text(size: fontSize.四号, [#info.date]),
+      )
+    ],
+  )
   pagebreak(weak: true)
 
   // ----- 头部中文
-  showTitle(info.title)
+  // 标题
+  align(
+    center,
+    text(28pt, info.title),
+  )
   v(8mm, weak: true)
 
-  showAuthor(author)
+  // 作者
+  let count = author.len()
+  let ncols = calc.min(count, 3)
+  grid(
+    columns: (1fr,) * ncols,
+    row-gutter: 16pt,
+    ..author.map(author => align(
+      center,
+      [
+        #author.name (#author.studentid) \
+        #author.department#author.major
+      ],
+    )),
+  )
   v(8mm, weak: true)
 
-  showAbstract(info.abstract)
-  showKeywords(info.keywords)
+  // 摘要
+  align(center, [*摘要*])
+  align(left, [#info.abstract])
+  // 关键词
+  align(left, [*关键词:* #info.keywords])
   v(8mm, weak: true)
 
   // ----- 头部英文
-  showTitle(info.titleEn)
+  // 标题
+  align(
+    center,
+    text(28pt, info.titleEn),
+  )
   v(8mm, weak: true)
 
-  showAbstract(info.abstractEn)
-  showKeywords(info.keywordsEn)
+  // 摘要
+  align(center, [*摘要*])
+  align(left, [#info.abstractEn])
+  // 关键词
+  align(left, [*关键词:* #info.keywordsEn])
   v(8mm, weak: true)
 
   // ----- 正文
-  showContent(body + reference)
-
+  align(
+    left,
+    columns(
+      2,
+      align(left, body + reference),
+    ),
+  )
   // 封面
   // showCover()
-
   // 声明
   // showDeclare()
-
   // 摘要
   // showAbstract()
-
   // 目录
   // showToc()
-
   // 正文
   // showContent()
-
   // 致谢
   // showAck()
-
   // 参考文献
   // showReference()
-
   // 附录
   // showAppendix()
 }

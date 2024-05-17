@@ -11,8 +11,8 @@
     title: [基于题目的题目],
     titleEn: [Title],
     // 摘要
-    abstract: [摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要摘要],
-    abstractEn: lorem(80),
+    abstract: lorem(25),
+    abstractEn: lorem(50),
     // 关键词
     keywords: [一 二 三],
     keywordsEn: [A B C],
@@ -26,18 +26,18 @@
   author: (
     (
       // 姓名
-      name: "拓欣",
-      nameEn: "Tuo Xin",
+      name: "张三",
+      nameEn: "Zhang San",
       // 学生证号
-      studentid: "922114740127",
+      studentid: "922114514101",
       // 班级号
-      classid: "9231147401",
+      classid: "9221145141",
       // 学院
-      department: [外国语学院],
-      departmentEn: [School of Foreign Studies],
+      department: [X学院],
+      departmentEn: [School of XX],
       // 专业
-      major: [日语专业],
-      majorEn: [Japanese Major],
+      major: [XX专业],
+      majorEn: [XX Major],
     ),
   ),
 
