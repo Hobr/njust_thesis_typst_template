@@ -71,7 +71,7 @@
     // 语言
     lang: lang,
     // 地区
-    region: lang,
+    region: "cn",
     // 字号
     size: 12pt,
     // 字体

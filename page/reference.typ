@@ -1,5 +1,5 @@
 // 参考文献
 
 #let showReference(ref) = {
-  ref
+  text(lang: "en")[#ref]
 }

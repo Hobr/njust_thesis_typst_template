@@ -51,7 +51,7 @@
   ),
 
   // 参考文献
-  reference: bibliography("ref.bib",full: true),
+  reference: bibliography("ref.bib",title:"参考文献",full: true),
 )
 
 // ---------- 正文
