@@ -8,16 +8,16 @@
   // 信息
   info: (
     // 标题
-    title: [基于题目的题目],
-    titleEn: [Title],
+    title: "基于题目的题目",
+    titleEn: "Title",
     // 摘要
     abstract: lorem(25),
     abstractEn: lorem(50),
     // 关键词
-    keywords: [一 二 三],
-    keywordsEn: [A B C],
+    keywords: "一 二 三",
+    keywordsEn: "A B C",
     // 日期
-    date: [2024年5月18日],
+    date: "2024年5月18日",
     // 语言
     lang: "zh"
   ),
@@ -33,11 +33,11 @@
       // 班级号
       classid: "9221145141",
       // 学院
-      department: [X学院],
-      departmentEn: [School of XX],
+      department: "X学院",
+      departmentEn: "School of XX",
       // 专业
-      major: [XX专业],
-      majorEn: [XX Major],
+      major: "XX专业",
+      majorEn: "XX Major",
     ),
   ),
 

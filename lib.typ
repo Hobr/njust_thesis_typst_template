@@ -10,7 +10,7 @@
   // 信息
   info: (
     // 标题
-    title: [题目],
+    title: "题目",
     titleEn: none,
     // 摘要
     abstract: none,
@@ -99,17 +99,17 @@
   )
 
   // 章节标题
-  set heading(numbering: "一.一.一. ")
+  set heading(numbering: "一.")
 
   show heading.where(level: 1): it => box(width: 100%)[
     #v(12pt)
-    #align(left, [#it])
+    #align(left)[#it]
     #v(2pt)
   ]
 
   show heading.where(level: 2): it => box(width: 100%)[
     #v(6pt)
-    #align(left, [#it])
+    #align(left)[#it]
     #v(2pt)
   ]
 
@@ -120,7 +120,7 @@
   let coverKey(key) = {
     rect(
       width: 100%,
-      inset: 4pt,
+      inset: 5pt,
       stroke: none,
       text(
         size: fontSize.小三,
@@ -144,47 +144,41 @@
     )
   }
 
-  align(
-    center,
-    [
+  align(center)[
+    #table(
+      columns: (auto),
+      rows: (auto, auto, auto),
+      stroke: none,
+      gutter: 32pt,
+      text(size: fontSize.小一)[《ChatGPT时代的科技论文检索与写作》课程报告],
+      text(size: fontSize.二号)[#info.title],
+    )
+    #v(20pt)
 
-      #table(
-        columns: (auto),
-        rows: (auto, auto, auto),
-        stroke: none,
-        gutter: 9pt,
-        text(
-          size: fontSize.小一,
-          [《ChatGPT时代的科技论文检索与写作》课程报告],
-        ),
-        text(size: fontSize.二号, [#info.title]),
-      )
-      #v(20pt)
+    #grid(
+      columns: (100pt, 40%),
+      rows: (35pt, 35pt),
+      coverKey("班级(班号)"),
+      coverValue(author.at(0).studentid),
+      coverKey("姓　　名"),
+      coverValue(author.at(0).name),
+      coverKey("学　　号"),
+      coverValue(author.at(0).studentid),
+      coverKey("学　　院"),
+      coverValue(author.at(0).department),
+    )
+    #v(10pt)
 
-      #grid(
-        columns: (100pt, 40%),
-        rows: (35pt, 35pt),
-        coverKey("班级(班号)"),
-        coverValue(author.at(0).studentid),
-        coverKey("姓　　名"),
-        coverValue(author.at(0).name),
-        coverKey("学　　号"),
-        coverValue(author.at(0).studentid),
-        coverKey("学　　院"),
-        coverValue(author.at(0).department),
-      )
-      #v(10pt)
+    #table(
+      columns: (auto),
+      rows: (auto, auto, auto),
+      stroke: none,
+      gutter: 12pt,
+      text(size: fontSize.四号)[南京理工大学],
+      text(size: fontSize.四号)[#info.date],
+    )
+  ]
 
-      #table(
-        columns: (auto),
-        rows: (auto, auto, auto),
-        stroke: none,
-        gutter: 12pt,
-        text(size: fontSize.四号, [南京理工大学]),
-        text(size: fontSize.四号, [#info.date]),
-      )
-    ],
-  )
   pagebreak(weak: true)
 
   // ----- 头部中文
@@ -201,21 +195,18 @@
   grid(
     columns: (1fr,) * ncols,
     row-gutter: 16pt,
-    ..author.map(author => align(
-      center,
-      [
-        #author.name (#author.studentid) \
-        #author.department#author.major
-      ],
-    )),
+    ..author.map(author => align(center)[
+      #author.name (#author.studentid)\
+      #author.department#author.major
+    ]),
   )
   v(8mm, weak: true)
 
   // 摘要
-  align(center, [*摘要*])
-  align(left, [#info.abstract])
+  align(center)[*摘要*]
+  align(left)[#info.abstract]
   // 关键词
-  align(left, [*关键词:* #info.keywords])
+  align(left)[*关键词:* #info.keywords]
   v(8mm, weak: true)
 
   // ----- 头部英文
@@ -227,19 +218,19 @@
   v(8mm, weak: true)
 
   // 摘要
-  align(center, [*摘要*])
-  align(left, [#info.abstractEn])
+  align(center)[*Abstract*]
+  align(left)[#info.abstractEn]
   // 关键词
-  align(left, [*关键词:* #info.keywordsEn])
+  align(left)[*Keywords:* #info.keywordsEn]
   v(8mm, weak: true)
 
   // ----- 正文
+  // 分栏
+  show: main => columns(2, main)
+
   align(
     left,
-    columns(
-      2,
-      align(left, body + reference),
-    ),
+    align(left, body + reference),
   )
   // 封面
   // showCover()
