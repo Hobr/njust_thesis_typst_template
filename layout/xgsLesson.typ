@@ -63,10 +63,8 @@
 // 段落
 #let setPar(doc) = {
   set par(
-    // 左右对齐
-    // justify: true,
-    // 行间距
-    leading: 0.75em,
+    // 行距
+    leading: 1.5em,
     // 行首缩进
     first-line-indent:2em
   )
@@ -80,27 +78,27 @@
     lang: lang,
     // 地区
     region: "cn",
-    // 字号
-    size: 12pt,
     // 字体
-    font: (fonts.math,fonts.en,fonts.zh_宋体),
+    font: (fonts.en,fonts.zh_宋体),
+    // 字号
+    size: fontSize.小四,
   )
   doc
 }
 
 // 小标题
 #let setHeading(doc) = {
-  set heading(numbering: "一.")
+  set heading(numbering: "1.1.1.1.1   ")
 
-  show heading.where(level: 1): it => box(width: 100%)[
-    #v(12pt)
-    #align(left)[#it]
+  show heading: it => box(width: 100%)[
     #v(2pt)
-  ]
-
-  show heading.where(level: 2): it => box(width: 100%)[
-    #v(6pt)
-    #align(left)[#it]
+    #align(
+      left,
+      text(
+        font: (fonts.en, fonts.zh_宋体),
+        size: fontSize.四号,
+      )[#it],
+    )
     #v(2pt)
   ]
   doc

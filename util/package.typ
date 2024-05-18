@@ -11,6 +11,8 @@
 #import "@preview/gentle-clues:0.8.0": *
 // 前言后记页码
 #import "@preview/anti-matter:0.1.1": anti-matter, fence, set-numbering
+// 正文伪粗体
+#import "@preview/cuti:0.2.1": show-cn-fakebold
 
 // ---------- 图形
 // 制图

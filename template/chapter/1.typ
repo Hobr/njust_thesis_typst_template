@@ -17,7 +17,7 @@
 _行内公式:_ $Q = rho A v + C$
 
 $
-f(x, y) := cases(
+  f(x, y) := cases(
   1 "if" (x dot y)/2 <= 0,
   2 "if" x "is even",
   3 "if" x in NN,
@@ -26,7 +26,7 @@ f(x, y) := cases(
 $
 
 $
-mat(
+  mat(
   1, 2, ..., 10;
   2, 2, ..., 10;
   dots.v, dots.v, dots.down, dots.v;
@@ -65,7 +65,6 @@ $
 // increments a value.
 #let inc(i) = i + 1
 
-// Reference the variables.
 I have #five fingers.
 
 If I had one more, I'd have

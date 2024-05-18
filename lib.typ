@@ -47,6 +47,9 @@
 ) = {
   // ----- 预设
   show: xgsLesson.with(info, author)
+  // 伪粗体
+  show: show-cn-fakebold
+
   // ----- 封面
   // 封面
   counter(page).update(0)
