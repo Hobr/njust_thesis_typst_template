@@ -1,8 +1,9 @@
 // 字体
 #let fonts = (
-  zh_宋体: "Songti SC",
-  zh_楷体: "Kaiti SC",
-  zh_黑体: "Heiti SC",
+  zh_宋体: "SimSun",
+  zh_楷体: "KaiTi",
+  zh_黑体: "SimHei",
+  zh_等线: "DengXian",
   en: "Times New Roman",
   math: "Cambria Math",
   jp: "MS Mincho",
