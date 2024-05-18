@@ -100,6 +100,18 @@
   doc
 }
 
+// 图注
+#let setCaption(doc) = {
+  // 图注
+  show figure.caption: set text(
+    font: (fonts.en, fonts.zh_宋体),
+    size: fontSize.五号,
+  )
+  // 跨页分割
+  show figure: set block(breakable: true)
+  doc
+}
+
 // 样式
 #let xgsLesson(info, author, doc) = {
   show: setDocument.with(info.title, author)
@@ -107,5 +119,6 @@
   show: setPar.with()
   show: setText.with(info.lang)
   show: setHeading.with()
+  show: setCaption.with()
   doc
 }
