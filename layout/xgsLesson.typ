@@ -85,7 +85,6 @@
 // 小标题
 #let setHeading(doc) = {
   set heading(numbering: "1.1.1.1.1   ")
-
   show heading: it => box(width: 100%)[
     #v(8pt)
     #align(
@@ -95,7 +94,7 @@
         size: fontSize.四号,
       )[#it],
     )
-    #v(8pt)
+    #v(2pt)
   ]
   doc
 }
