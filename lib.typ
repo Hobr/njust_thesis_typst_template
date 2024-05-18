@@ -76,8 +76,6 @@
   v(8mm, weak: true)
   // 摘要
   showAbstract(info.abstractEn, keywords: info.keywordsEn, lang: "en")
-  v(4mm, weak: true)
-  line(length: 100%, stroke: 0.5pt)
   v(8mm, weak: true)
 
   // 目录
