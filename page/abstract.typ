@@ -4,49 +4,22 @@
 // 摘要
 #let showAbstract(abstract, keywords: none, lang: "zh") = {
   align(
-    center,
-    if lang == "zh" {
+    left,
+    par(
+      first-line-indent: 0em,
       text(
         font: (fonts.en, fonts.zh_宋体),
         size: fontSize.五号,
-      )[*摘要*]
-    } else if lang == "en" {
-      text(
-        font: fonts.en,
-        size: fontSize.五号,
-      )[*Abstract*]
-    },
-  )
-  align(
-    left,
-    text(
-      font: (fonts.en, fonts.zh_宋体),
-      size: fontSize.五号,
-    )[#abstract],
+        // 摘要
+        (if lang == "zh" [ *［摘 要］*] else [*Abstract—*] + [#abstract]) + (
+          // 关键词
+          if keywords != none {
+            [#if lang == "zh" [\ *［关键词］*] else [\ *Index Terms—*]] + [#keywords]
+          }
+        ),
+      ),
+    ),
   )
 
-  // 关键词
-  if keywords != none {
-    align(
-      left,
-      (
-        if lang == "zh" {
-          text(
-            font: (fonts.en, fonts.zh_宋体),
-            size: fontSize.五号,
-          )[*关键词:* ]
-        } else if lang == "en" {
-          text(
-            font: fonts.en,
-            size: fontSize.五号,
-          )[*Index Terms:* ]
-        }
-      ) + {
-        text(
-          font: (fonts.en, fonts.zh_宋体),
-          size: fontSize.五号,
-        )[#keywords]
-      },
-    )
-  }
+  line(length: 100%, stroke: 0.5pt)
 }
