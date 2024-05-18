@@ -87,7 +87,7 @@
   set heading(numbering: "1.1.1.1.1   ")
 
   show heading: it => box(width: 100%)[
-    #v(2pt)
+    #v(8pt)
     #align(
       left,
       text(
@@ -95,7 +95,7 @@
         size: fontSize.四号,
       )[#it],
     )
-    #v(2pt)
+    #v(8pt)
   ]
   doc
 }

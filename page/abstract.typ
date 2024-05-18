@@ -2,12 +2,11 @@
 #import "../util/font.typ": fonts, fontSize
 
 // 摘要
-#let showAbstract(abstract, keywords: none, lang: "zh") = {
-  align(
-    left,
-    par(
-      first-line-indent: 0em,
-      text(
+#let showAbstract(abstract, keywords: none, lang: "zh") = align(
+  left,
+  par(
+    first-line-indent: 0em,
+    text(
         font: (fonts.en, fonts.zh_宋体),
         size: fontSize.五号,
         // 摘要
@@ -18,8 +17,6 @@
           }
         ),
       ),
-    ),
-  )
+  ),
+)
 
-  line(length: 100%, stroke: 0.5pt)
-}
