@@ -2,15 +2,13 @@
 #import "../util/font.typ": fonts, fontSize
 
 // 标题
-#let showTitle(title) = {
-  align(
-    center,
-    text(
-      font: (fonts.en, fonts.zh_黑体),
-      size: fontSize.三号,
-    )[#title],
-  )
-}
+#let showTitle(title) = align(
+  center,
+  text(
+    font: (fonts.en, fonts.zh_黑体),
+    size: fontSize.三号,
+  )[#title],
+)
 
 // 作者
 #let showAuthor(author) = {

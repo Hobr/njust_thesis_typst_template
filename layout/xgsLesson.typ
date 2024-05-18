@@ -13,37 +13,33 @@
 }
 
 // 页眉
-#let pageHeader(title) = {
-  locate(loc => {
-    if loc.page() > 1 [
-      #align(
-        center,
-        text(
-          font: fonts.zh_宋体,
-          size: 10pt,
-          baseline: 8pt,
-          spacing: 3pt,
-        )[#title],
-      )
-      #line(length: 100%, stroke: 0.1pt)
-    ]
-  })
-}
+#let pageHeader(title) = locate(loc => {
+  if loc.page() > 1 [
+    #align(
+      center,
+      text(
+        font: fonts.zh_宋体,
+        size: 10pt,
+        baseline: 8pt,
+        spacing: 3pt,
+      )[#title],
+    )
+    #line(length: 100%, stroke: 0.1pt)
+  ]
+})
 
 // 页脚
-#let pageFooter() = {
-  locate(loc => {
-    if loc.page() > 1 [
-      #align(
-        center,
-        text(
-          size: 12pt,
-          baseline: 16pt,
-        )[#counter(page).display("- 1 / 1 -", both: true)],
-      )
-    ]
-  })
-}
+#let pageFooter() = locate(loc => {
+  if loc.page() > 1 [
+    #align(
+      center,
+      text(
+        size: 12pt,
+        baseline: 16pt,
+      )[#counter(page).display("- 1 / 1 -", both: true)],
+    )
+  ]
+})
 
 // 页面
 #let setPage(title, doc) = {
