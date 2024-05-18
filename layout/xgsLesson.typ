@@ -94,7 +94,7 @@
         size: fontSize.四号,
       )[#it],
     )
-    #v(2pt)
+    #v(4pt)
   ]
   doc
 }
@@ -106,8 +106,6 @@
     font: (fonts.en, fonts.zh_宋体),
     size: fontSize.五号,
   )
-  // 跨页分割
-  show figure: set block(breakable: true)
   doc
 }
 
