@@ -52,7 +52,6 @@
 
   // ----- 封面
   // 封面
-  counter(page).update(0)
   showCover(info, author)
   pagebreak(weak: true)
 
@@ -80,8 +79,12 @@
 
   // 目录
   // showToc()
+  pagebreak(weak: true)
+  outline()
+  pagebreak(weak: true)
 
   // ----- 正文
+  counter(page).update(1)
   showContent(body + showReference(reference))
   // 致谢
   // showAck()

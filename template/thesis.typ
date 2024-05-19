@@ -58,9 +58,7 @@
 )
 
 // ---------- 正文
-// 引言
 #include "chapter/1-引言.typ"
-// 第二章
 #include "chapter/2-基础.typ"
 #include "chapter/3-主要挑战.typ"
 #include "chapter/4-案例.typ"

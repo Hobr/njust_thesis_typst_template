@@ -30,7 +30,7 @@
 
 // 页脚
 #let pageFooter() = locate(loc => {
-  if loc.page() > 1 [
+  if loc.page() > 5 [
     #align(
       center,
       text(
