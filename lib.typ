@@ -2,6 +2,8 @@
 #import "util/package.typ": *
 // 样式
 #import "layout/xgsLesson.typ": xgsLesson
+// 字体
+#import "util/font.typ": fonts, fontSize
 // 页面
 #import "page/cover.typ": showCover
 #import "page/header.typ": showTitle, showAuthor
@@ -49,6 +51,8 @@
   show: xgsLesson.with(info, author)
   // 伪粗体
   show: show-cn-fakebold
+  // 伪斜体
+  show emph: text.with(font: (fonts.en, fonts.zh_楷体))
 
   // ----- 封面
   // 封面
