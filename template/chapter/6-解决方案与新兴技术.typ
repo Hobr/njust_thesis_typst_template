@@ -16,7 +16,7 @@
 
 === 按照版本控制的依赖管理
 
-现代依赖管理工具通过版本控制来解决依赖冲突和版本兼容性问题。
+现代依赖管理工具通过版本控制来解决依赖冲突和版本兼容性问题@hegdePackageManagementSystem2021\。
 
 - *Maven 和 Gradle*：用于Java生态系统，依赖于中央仓库和配置文件（如`pom.xml`和`build.gradle`），通过指定依赖版本和范围来管理依赖。
 - *npm 和 yarn*：用于JavaScript生态系统，通过`package.json`文件定义依赖和版本。yarn增加了依赖锁定功能，提高了安装一致性。

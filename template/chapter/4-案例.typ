@@ -1,9 +1,9 @@
 = 常用的依赖管理工具
 
-在不同的编程语言和操作系统环境中，有多种依赖管理工具可以帮助开发者管理软件包及其依赖关系。本章将介绍一些常用的依赖管理工具，包括`APT、YUM、NPM、PIP、CTAN、Nix`以及其他常见工具。
+在不同的编程语言和操作系统环境中，有多种依赖管理工具可以帮助开发者管理软件包及其依赖关系。本章将介绍一些常用的依赖管理工具，包括_APT_、_YUM_、_NPM_、_PIP_、_CTAN_、_Nix_以及其他常见工具。
 
 == APT
-*APT*（Advanced Package Tool）是Debian和基于Debian的Linux发行版（如Ubuntu）中常用的包管理系统。APT通过维护软件包的数据库和依赖关系，简化了软件的安装、升级和移除。
+*APT*（Advanced Package Tool）是Debian和基于Debian的Linux发行版（如Ubuntu）中常用的包管理系统。APT通过维护软件包的数据库和依赖关系，简化了软件的安装、升级和移除@mancinelliManagingComplexityLarge2006\。
 
 - *主要功能*：
   - 包搜索：`apt-cache search [包名]`
@@ -64,7 +64,7 @@ PIP（Pip Installs Packages）是Python的包管理工具，用于安装和管�
 
 == CTAN
 
-CTAN（Comprehensive TeX Archive Network）是LaTeX文档系统的包管理工具。CTAN提供了一个集中的存储库，包含大量的LaTeX宏包和类文件。
+CTAN（Comprehensive TeX Archive Network）是LaTeX文档系统的包管理工具@greenwadeComprehensiveTEXArchveNetwork1993\。CTAN提供了一个集中的存储库，包含大量的LaTeX宏包和类文件。
 
 - *主要功能*：
   - 包安装：通过工具如TeX Live或MiKTeX来安装CTAN包。
@@ -77,7 +77,9 @@ CTAN（Comprehensive TeX Archive Network）是LaTeX文档系统的包管理工�
 
 == Nix
 
-Nix是一个功能强大的包管理器和部署工具，支持多种编程语言和环境。Nix通过独特的配置语言和存储机制，实现了依赖包的精确管理和隔离。
+Nix是一个功能强大的包管理器和部署工具@dolstraNixSafePolicyFree2004\，支持多种编程语言和环境。Nix通过独特的配置语言和存储机制，实现了依赖包的精确管理和隔离。
+
+基于其开发的NixOS@dolstraNixOSPurelyFunctional2008\也已经成为了近几年的热门发行版，通过Nix语言管理整个系统的配置，并且支持锁机制等机制。
 
 - *主要功能*：
   - 包安装：`nix-env -i [包名]`
