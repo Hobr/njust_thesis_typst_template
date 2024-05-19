@@ -55,7 +55,7 @@
     columns: (25%, 57%),
     rows: (40pt, 40pt),
     coverKey("班级（班号）"),
-    coverValue(author.at(0).studentid),
+    coverValue(author.at(0).classid),
     coverKey("姓 名"),
     coverValue(author.at(0).name),
     coverKey("学 号"),

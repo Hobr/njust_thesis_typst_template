@@ -1,7 +1,9 @@
 // 包
 #import "util/package.typ": *
 // 样式
-#import "layout/xgsLesson.typ": xgsLesson
+#import "layout/xgsLesson.typ": xgsLesson, setPage
+// 字体
+#import "util/font.typ": fonts, fontSize
 // 页面
 #import "page/cover.typ": showCover
 #import "page/header.typ": showTitle, showAuthor
@@ -49,16 +51,20 @@
   show: xgsLesson.with(info, author)
   // 伪粗体
   show: show-cn-fakebold
-
+  // 伪斜体
+  show emph: text.with(font: (fonts.en, fonts.zh_楷体))
+  // 页面, 无页眉页脚
+  show: setPage.with(info.title, header: false, footer: false)
   // ----- 封面
   // 封面
-  counter(page).update(0)
   showCover(info, author)
   pagebreak(weak: true)
 
   // 声明
   // showDeclare()
 
+  // 页面, 无页脚有页眉
+  show: setPage.with(info.title, header: true, footer: false)
   // 中文
   // 标题
   showTitle(info.title)
@@ -76,14 +82,18 @@
   v(8mm, weak: true)
   // 摘要
   showAbstract(info.abstractEn, keywords: info.keywordsEn, lang: "en")
-  v(4mm, weak: true)
-  line(length: 100%, stroke: 0.5pt)
   v(8mm, weak: true)
 
   // 目录
   // showToc()
+  pagebreak(weak: true)
+  outline(indent: auto)
+  pagebreak(weak: true)
 
+  // 页面, 有页眉页脚
+  show: setPage.with(info.title, header: true, footer: true)
   // ----- 正文
+  counter(page).update(1)
   showContent(body + showReference(reference))
   // 致谢
   // showAck()

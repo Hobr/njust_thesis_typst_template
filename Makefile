@@ -9,6 +9,6 @@ fmt:
 
 thumbnail:
 	typst compile --root=. --font-path=./font template/thesis.typ --format=png ./thumbnail{n}.png
-	mv thumbnail1.png dist.png
+	mv thumbnail01.png dist.png
 	rm thumbnail*.png
 	mv dist.png thumbnail.png

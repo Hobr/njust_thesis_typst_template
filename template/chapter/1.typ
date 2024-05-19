@@ -2,7 +2,7 @@
 = 引言
 
 + 南京理工大学(@logo)
-  - 南京校区
+  - 南京校区@greenwade_comprehensive_1993
   - 江阴校区
   - 汤山校区
   - 盱眙校区
@@ -54,6 +54,9 @@ $
 #for x in range(3) [
   Hi #x.
 ]
+
+#lorem(250)
+
 == 更多
 
 // Store the integer `5`.
@@ -70,6 +73,9 @@ I have #five fingers.
 If I had one more, I'd have
 
 #inc(five) fingers. Whoa!
+
+#lorem(250)
+
 == 表格
 
 #table(
@@ -80,3 +86,5 @@ If I had one more, I'd have
     }
   },
 )
+
+#lorem(250)
