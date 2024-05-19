@@ -8,16 +8,16 @@
   // 信息
   info: (
     // 标题
-    title: "软件包及其依赖分发管理的挑战与解决方案综述",
-    titleEn: "Challenges and Solutions Review of Software Package and Dependency Distribution Management",
+    title: "南京理工大学是？",
+    titleEn: "Nanjing University of Science and Technology is What",
     // 摘要
-    abstract: [随着开放源代码运动的发展及软件开发规模的不断扩大，软件包及其依赖的分发及管理成为软件分发的关键。然而，依赖关系的复杂性、版本兼容性问题以及安全性等挑战仍然困扰着软件开发者、发行版开发商和用户。本综述旨在探讨软件包及其依赖分发管理的主要挑战，介绍现有的解决方案和工具并探讨未来的发展方向，通过对比不同的管理工具和方法分析其优缺点，为开发者开发、维护软件以及发行版、包管理器开发商们创造新的软件包分发方案时提供经验。],
-    abstractEn: [With the development of the Open-Source movement and the continuous expansion of software development scale, the distribution and management of software packages and their dependencies have become crucial aspects of software distribution. However, challenges such as the complexity of dependency relationships, version compatibility issues, and security concerns still persist, troubling software developers, distribution maintainers, and users alike. This review aims to explore the main challenges in the distribution and management of software packages and their dependencies, introduce existing solutions and tools, and discuss future development directions. By comparing different management tools and methods and analyzing their advantages and disadvantages, this review provides valuable insights for developers in the creation and maintenance of software, as well as for distribution maintainers and package manager developers in devising new software distribution solutions.],
+    abstract: [南京理工大学是隶属于工业和信息化部的全国重点大学，学校由创建于1953年的新中国军工科技最高学府中国人民解放军军事工程学院（简称“哈军工”）分建而成，经历了中国人民解放军炮兵工程学院、华东工程学院、华东工学院等发展阶段，1993年更名为南京理工大学。1995年，学校成为国家首批“211工程”重点建设高校；2000年，获批成立研究生院；2011年，获批建设“985工程优势学科创新平台”；2017年，学校入选“双一流”建设高校，“兵器科学与技术”学科入选“双一流”建设学科；2018年，王泽山院士获得国家最高科学技术奖，同年，学校成为工信部、教育部、江苏省共建高校。进入新时代、开启新征程，学校坚持“以人为本，厚德博学”的办学理念，秉持“进德修业，志道鼎新”的校训，弘扬“团结、献身、求是、创新”的校风，以服务国家战略需求、推动社会进步为使命，为党育英才、为国铸利器，围绕陆海空天信融合发展，向特色鲜明世界一流大学的目标奋勇前进。],
+    abstractEn: [Nanjing University of Science and Technology is a national key university affiliated to the Ministry of Industry and Information Technology. The school was established in 1953 by the Chinese People's Liberation Army Military Engineering College (referred to as "Harbin Military Industry"), the highest institution of military science and technology in New China. It has experienced China's It was in the development stage of the People's Liberation Army Artillery Engineering College, East China Institute of Engineering, and East China Institute of Technology. In 1993, it was renamed Nanjing University of Science and Technology. In 1995, the school became one of the first batch of national "211 Project" key universities; in 2000, it was approved to establish a graduate school; in 2011, it was approved to build the "985 Project Advantageous Discipline Innovation Platform"; in 2017, the school was selected for the "Double First-Class" construction At the university, the "Weapons Science and Technology" discipline was selected as a "Double First-Class" construction discipline; in 2018, Academician Wang Zeshan won the country's highest science and technology award. In the same year, the school became a university jointly built by the Ministry of Industry and Information Technology, the Ministry of Education, and Jiangsu Province. Entering a new era and embarking on a new journey, the school adheres to the school-running philosophy of "people-oriented, virtuous and knowledgeable", upholds the school motto of "advancing morals, cultivating talents, and pursuing innovation", and promotes the school spirit of "unity, dedication, truth-seeking, and innovation" to serve the country It takes strategic needs and promotes social progress as its mission, educates talents for the party and forges weapons for the country, focuses on the integrated development of land, sea, air, space and information, and marches forward bravely towards the goal of becoming a world-class university with distinctive characteristics.],
     // 关键词
-    keywords: "软件包; 依赖管理; 版本兼容性; 安全性; 依赖冲突; 开源",
-    keywordsEn: "Software Package; Dependency Management; Version Compatibility; Security; Dependency Conflicts; Open Source",
+    keywords: "南京理工大学 华东工学院 华东工程学院 炮兵工程学院 军事工程学院",
+    keywordsEn: "NJUST; Nanjing; University; 211; 984",
     // 日期
-    date: "2024年5月19日",
+    date: "2024年5月18日",
     // 语言
     lang: "zh"
   ),
@@ -26,18 +26,18 @@
   author: (
     (
       // 姓名
-      name: "拓欣",
-      nameEn: "Tuo Xin",
+      name: "张三",
+      nameEn: "Zhang San",
       // 学生证号
-      studentid: "922114740127",
-      // 课程班级号
-      classid: "YT000110",
+      studentid: "922114514101",
+      // 班级号
+      classid: "9221145141",
       // 学院
-      department: "外国语学院",
-      departmentEn: "School of Foreign Studies",
+      department: "X学院",
+      departmentEn: "School of XX",
       // 专业
-      major: "日语专业",
-      majorEn: "Japanese Major",
+      major: "XX专业",
+      majorEn: "XX Major",
     ),
   ),
 
@@ -58,11 +58,7 @@
 )
 
 // ---------- 正文
-#include "chapter/1-引言.typ"
-#include "chapter/2-基础.typ"
-#include "chapter/3-主要挑战.typ"
-#include "chapter/4-案例.typ"
-#include "chapter/5-最佳实践.typ"
-#include "chapter/6-解决方案与新兴技术.typ"
-#include "chapter/7-未来趋势与研究方向.typ"
-#include "chapter/8-总结.typ"
+// 引言
+#include "chapter/1.typ"
+// 第二章
+#include "chapter/2.typ"

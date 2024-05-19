@@ -30,28 +30,26 @@
 
 // 页脚
 #let pageFooter() = locate(loc => {
-  if loc.page() > 5 [
-    #align(
-      center,
-      text(
-        size: 12pt,
-        baseline: 16pt,
-      )[#counter(page).display("- 1 / 1 -", both: true)],
-    )
-  ]
+  align(
+    center,
+    text(
+      size: 12pt,
+      baseline: 16pt,
+    )[#counter(page).display("- 1 / 1 -", both: true)],
+  )
 })
 
 // 页面
-#let setPage(title, doc) = {
+#let setPage(title, header: false, footer: false, doc) = {
   set page(
     // 纸张大小
     paper: "a4",
     // 边距
     margin: auto,
     // 页眉
-    header: pageHeader(title),
+    header: (if header == true {pageHeader(title)} ),
     // 页脚
-    footer: pageFooter(),
+    footer: (if footer == true {pageFooter()} ),
   )
   doc
 }
@@ -114,7 +112,6 @@
 // 样式
 #let xgsLesson(info, author, doc) = {
   show: setDocument.with(info.title, author)
-  show: setPage.with(info.title)
   show: setPar.with()
   show: setText.with(info.lang)
   show: setHeading.with()
