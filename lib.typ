@@ -80,7 +80,7 @@
   // 目录
   // showToc()
   pagebreak(weak: true)
-  outline()
+  outline(indent: auto)
   pagebreak(weak: true)
 
   // ----- 正文
