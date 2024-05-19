@@ -8,16 +8,16 @@
   // 信息
   info: (
     // 标题
-    title: "软件包管理的历史沿革",
-    titleEn: "",
+    title: "软件包及其依赖分发管理的挑战与解决方案综述",
+    titleEn: "A Review of Software Package and Dependency Management's Challenges and Solutions",
     // 摘要
-    abstract: [],
-    abstractEn: [],
+    abstract: [随着开放源代码运动的发展及软件开发规模的不断扩大，软件包及其依赖的分发及管理成为软件分发的关键。然而，依赖关系的复杂性、版本兼容性问题以及安全性等挑战仍然困扰着开发者和用户。本综述旨在探讨软件包及其依赖管理的主要挑战，介绍现有的解决方案和工具，并探讨未来的发展方向。通过对比不同的管理工具和方法分析其优缺点，为开发者提供有价值的参考。],
+    abstractEn: [With the growth of the open source movement and the increasing scale of software development, the distribution and management of software packages and their dependencies have become crucial to software delivery. However, the complexity of dependency relationships, issues with version compatibility, and security challenges continue to trouble developers and users. This review aims to explore the main challenges in software package and dependency management, introduce existing solutions and tools, and discuss future directions. By comparing different management tools and methods, we analyze their strengths and weaknesses to provide valuable insights for developers.],
     // 关键词
-    keywords: "软件包; 依赖; 分发; 开源",
-    keywordsEn: "Package Manage; Dependency; Disturbute; Open Source",
+    keywords: "软件包; 依赖管理; 版本兼容性; 安全性; 依赖冲突; 开源",
+    keywordsEn: "Software Package; Dependency Management; Version Compatibility; Security; Dependency Conflicts; Open Source",
     // 日期
-    date: "2024年5月18日",
+    date: "2024年5月19日",
     // 语言
     lang: "zh"
   ),
@@ -59,6 +59,12 @@
 
 // ---------- 正文
 // 引言
-#include "chapter/1.typ"
+#include "chapter/1-引言.typ"
 // 第二章
-#include "chapter/2.typ"
+#include "chapter/2-基础.typ"
+#include "chapter/3-主要挑战.typ"
+#include "chapter/4-案例.typ"
+#include "chapter/5-最佳实践.typ"
+#include "chapter/6-解决方案与新兴技术.typ"
+#include "chapter/7-未来趋势与研究方向.typ"
+#include "chapter/8-总结.typ"

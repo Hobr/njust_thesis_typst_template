@@ -11,5 +11,4 @@
       font: (fonts.en, fonts.zh_宋体),
       size: fontSize.四号,
     )[参考文献],
-    full: true,
   )]

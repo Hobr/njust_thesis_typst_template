@@ -15,7 +15,7 @@
           [\ ] + (if lang == "zh" [*关键词*: ] else [*Index Terms—*]) + [#keywords]
         }
       ),
-    ),
+    )
   ),
 )
 

@@ -62,7 +62,9 @@
     // 行距
     leading: 1.5em,
     // 行首缩进
-    first-line-indent:2em
+    first-line-indent:2em,
+    // 两侧对齐
+    justify: true
   )
   doc
 }
