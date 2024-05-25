@@ -12,9 +12,9 @@ Work in Progress....
 
 ## 计划
 
-- [x] 谢国森老师公选论文课程
-- [ ] 本科科研训练
-- [ ] 本科学位
+- [x] 谢国森老师公选论文课程 2023-2024第二学期标准
+- [ ] 本科科研训练 2022级标准
+- [ ] 本科毕业设计/论文 标准: [2023-10-17发布版本](http://bysj.njust.edu.cn/NewsDetail.aspx?ConfigurationID=n5IuBXqj3nE%3d&HomePageManagementID=IdcFBHw1Yn0%3d)
 
 ## 感谢
 
